@@ -1,5 +1,6 @@
 package com.rocha.cursomc.services;
 
+import java.util.List;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -44,6 +45,10 @@ public class CategoriaService {
 		catch (DataIntegrityViolationException e) {
 			throw new DataIntegrityException("Não e possivel excluir uma categoria com produtos");
 		}
+	}
+	
+	public List<Categoria> findAll(){
+		return repo.findAll();
 	}
 
 }
